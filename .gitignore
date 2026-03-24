@@ -1,0 +1,67 @@
+# ==============================
+# 🔐 Environment Variables
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# 🧠 Python (Backend)
+# ==============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite
+*.db
+*.sqlite3
+
+# Virtual Environment
+venv/
+env/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+logs/
+
+# ==============================
+# 📁 Uploads (user files)
+# ==============================
+backend/uploads/
+
+# ==============================
+# ⚛️ React / Frontend
+# ==============================
+node_modules/
+frontend/node_modules/
+
+frontend/build/
+frontend/dist/
+
+# React env files
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ==============================
+# 💻 IDE / OS
+# ==============================
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+
+# ==============================
+# 📦 Misc
+# ==============================
+*.bak
+*.tmp

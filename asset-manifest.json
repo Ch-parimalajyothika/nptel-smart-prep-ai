@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nptel-smart-prep-ai/static/css/main.dcc5013f.css",
+    "main.js": "/nptel-smart-prep-ai/static/js/main.3a99aeb6.js",
+    "index.html": "/nptel-smart-prep-ai/index.html",
+    "main.dcc5013f.css.map": "/nptel-smart-prep-ai/static/css/main.dcc5013f.css.map",
+    "main.3a99aeb6.js.map": "/nptel-smart-prep-ai/static/js/main.3a99aeb6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcc5013f.css",
+    "static/js/main.3a99aeb6.js"
+  ]
+}
