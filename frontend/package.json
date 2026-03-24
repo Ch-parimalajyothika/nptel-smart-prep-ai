@@ -2,7 +2,7 @@
   "name": "nptel-smart-prep-ai",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://ch-parimalajyothika.github.io/nptel-smart-prep-ai",
+  "homepage": ".",
 
   "dependencies": {
     "axios": "^1.6.0",
