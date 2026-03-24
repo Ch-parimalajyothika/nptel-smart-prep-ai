@@ -1,0 +1,30 @@
+# ── Core Flask ────────────────────────────────────────
+flask==3.0.0
+flask-cors==4.0.0
+flask-jwt-extended==4.6.0
+python-dotenv==1.0.0
+werkzeug==3.0.1
+
+# ── AI / Gemini ───────────────────────────────────────
+google-generativeai==0.3.2
+
+# ── Speech-to-Text ────────────────────────────────────
+openai==1.6.1
+
+# ── YouTube Transcript (legal, no scraping) ───────────
+youtube-transcript-api==0.6.2
+
+# ── PDF Generation ────────────────────────────────────
+reportlab==4.0.7
+
+
+# ── PDF Reading ───────────────────────────────────────
+pdfplumber==0.10.3
+PyPDF2==3.0.1
+
+# ── Security ─────────────────────────────────────────
+bcrypt==4.1.2
+
+# ── Utilities ────────────────────────────────────────
+requests==2.31.0
+yt-dlp==2023.12.30

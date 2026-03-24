@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14b896" />
+    <meta name="description" content="NPTEL Smart Prep AI — Your intelligent NPTEL study companion" />
+    <title>NPTEL Smart Prep AI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+      #root { height: 100vh; }
+      /* Loading screen */
+      .init-loader {
+        position: fixed; inset: 0;
+        background: #0f1117;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      .init-loader .logo-text {
+        font-family: 'Syne', sans-serif;
+        font-size: 1.75rem; font-weight: 800;
+        background: linear-gradient(135deg, #14b896, #5eeac8);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        margin-top: 1rem;
+      }
+      .init-loader .spinner {
+        width: 48px; height: 48px;
+        border: 3px solid rgba(20,184,150,0.2);
+        border-top-color: #14b896;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="init-loader" id="initLoader">
+        <div class="spinner"></div>
+        <div class="logo-text">NPTEL Smart Prep AI</div>
+      </div>
+    </div>
+    <script>
+      // Hide loader once React mounts
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loader = document.getElementById('initLoader');
+          if (loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 500); }
+        }, 800);
+      });
+    </script>
+
+    <!-- 🎨 MERMAID DIAGRAM SUPPORT -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ 
+        startOnLoad: true,
+        theme: 'default',
+        themeVariables: {
+          primaryColor: '#14b896',
+          primaryTextColor: '#ffffff',
+          primaryBorderColor: '#14b896',
+          lineColor: '#64748b',
+          secondaryColor: '#1e293b',
+          tertiaryColor: '#0f1117'
+        }
+      });
+    </script>
+    <!-- END OF MERMAID SCRIPT -->
+
+  </body>
+</html>
