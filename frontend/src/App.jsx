@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -21,34 +21,26 @@ import Chatbot from './components/Chatbot/Chatbot';
 import Progress from './components/Progress/Progress';
 
 
-// ✅ FIXED PROTECTED ROUTE
+// ✅ PROTECTED
 const Protected = ({ children }) => {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        Loading...
-      </div>
-    );
+    return <div className="flex justify-center items-center h-screen">Loading...</div>;
   }
 
-  if (!user) {
-    return <Navigate to="/login" replace />;
-  }
-
-  return children;
+  return user ? children : <Navigate to="/login" replace />;
 };
 
 
-// ✅ LAYOUT SHELL
+// ✅ LAYOUT
 const Shell = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[var(--bg-secondary)]">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar open={open} onClose={() => setOpen(false)} />
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
+      <div className="flex-1 flex flex-col">
         <Header onMenuClick={() => setOpen(true)} />
         <main className="flex-1 overflow-y-auto">{children}</main>
       </div>
@@ -82,7 +74,6 @@ const AppRoutes = () => (
     <Route path="/chatbot" element={<P el={<Chatbot />} />} />
     <Route path="/progress" element={<P el={<Progress />} />} />
 
-    {/* ✅ IMPORTANT FIX */}
     <Route path="/" element={<Navigate to="/login" replace />} />
     <Route path="*" element={<Navigate to="/login" replace />} />
   </Routes>
@@ -95,9 +86,9 @@ const App = () => {
     <ThemeProvider>
       <AuthProvider>
         <NotificationProvider>
-          <BrowserRouter>
+          <Router>
             <AppRoutes />
-          </BrowserRouter>
+          </Router>
         </NotificationProvider>
       </AuthProvider>
     </ThemeProvider>
